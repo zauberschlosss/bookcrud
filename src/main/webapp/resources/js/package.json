@@ -1,0 +1,13 @@
+{
+  "name": "draw-shapes",
+  "dependencies": {
+    "ol": "6.4.3"
+  },
+  "devDependencies": {
+    "parcel": "1.11.0"
+  },
+  "scripts": {
+    "start": "../../WEB-INF/view/node_modules/.bin/parcel maps.jsp",
+    "build": "../../WEB-INF/view/node_modules/.bin/parcel build --experimental-scope-hoisting --public-url . /maps"
+  }
+}
