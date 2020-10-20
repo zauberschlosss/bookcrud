@@ -5,6 +5,26 @@ import java.util.List;
 
 @Entity
 @Table(name = "shape")
+
+@NamedQuery(name = "ShapeEntity.findShape",
+        query = "FROM ShapeEntity s where s.id=4")
+
+@NamedNativeQuery(
+        name = "ShapeEntity.findShapeNative",
+        query = "SELECT * FROM shape WHERE id > 2",
+        resultClass = ShapeEntity.class)
+
+@SqlResultSetMapping(
+        name = "ShapeEntity.LabelsResult",
+        columns = {@ColumnResult(name = "label")}
+)
+
+@NamedNativeQuery(
+        name = "ShapeEntity.findShapeLabels",
+        query = "SELECT label FROM shape",
+        resultSetMapping = "ShapeEntity.LabelsResult"
+)
+
 public class ShapeEntity {
 
   @Id
@@ -61,5 +81,16 @@ public class ShapeEntity {
 
   public void setGeometryName(String geometryName) {
     this.geometryName = geometryName;
+  }
+
+  @Override
+  public String toString() {
+    return "ShapeEntity{" +
+            "id=" + id +
+            ", color='" + color + '\'' +
+            ", label='" + label + '\'' +
+            ", coordinates='" + coordinates + '\'' +
+            ", geometryName='" + geometryName + '\'' +
+            '}';
   }
 }

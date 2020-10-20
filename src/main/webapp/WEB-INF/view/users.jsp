@@ -8,7 +8,7 @@
 </head>
 <body>
 <h3>Create New User</h3>
-<div style="border:1px solid olivedrab; width:400px; padding:10px;">
+<%--<div style="border:1px solid olivedrab; width:400px; padding:10px;">
 
     <form:form action="/users/createnewuser" modelAttribute="user" method="POST">
         User Name: <form:input path="username"/>
@@ -25,7 +25,7 @@
         <hr>
         <input type="submit" value="Submit">
     </form:form>
-</div>
+</div>--%>
 
 </body>
 </html>
